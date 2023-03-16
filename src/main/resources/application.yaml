@@ -1,0 +1,27 @@
+server:
+  port: 7080
+  
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    userName: system
+    url: jdbc:oracle:thin:@${spring.datasource.plain-url}
+    # plain-url: 172.28.224.1:8161/xe # Adaptador de Ethernet vEthernet (WSL):
+    plain-url: localhost:8161/xe
+    password: oracle
+  jpa:
+    show-sql: 'true'
+  devtools:
+    restart:
+      enabled: 'true'
+
+springdoc:
+  enable-native-support: 'true'
+  swagger-ui:
+    path: /swagger-ui
+
+logging:
+  level:
+    org:
+      hibernate:
+        stat: debug    
