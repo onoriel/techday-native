@@ -19,8 +19,7 @@ public class AlertRepository {
     static class NoticeRowMapper implements RowMapper<Alert> {
         @Override
         public Alert mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Alert student = new Alert();
-            student.setName(rs.getString("name"));
+            Alert student = new Alert(rs.getString("name"));
             return student;
         }
     }
